@@ -15,7 +15,7 @@ The goal of this work is to investigate whether embedding a form of "pre-knowled
 ## Files
 
 - `exciter.py`: Initial version of the implementation (developed with Claude 4).
-- `exciter_chat4.py`: Improved and debugged version with enhancements made using ChatGPT-4o.
+- `exciter_chat5.py`: Improved and debugged version with enhancements made using ChatGPT-4o.
 - `ForwardProp.png`, `BackwardProp.png`: Visual diagrams showing the forward and backward propagation paths.
 
 ## Status
