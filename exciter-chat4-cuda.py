@@ -51,7 +51,7 @@ class ExciterLayer(nn.Module):
             self.callback_fn(self, grad_output)
 
         # Simple example weight update
-        grad = grad_output.mean().item()
+        grad = grad_output.mean().to(exciter_layer.weight.device).item()  # Ensure grad is on same device
         self.weight -= 0.01 * grad
         self.bias -= 0.001 * grad
 
@@ -104,8 +104,8 @@ def exciter_callback(exciter_layer, grad_output):
         print(f"Current biases: {exciter_layer.bias}")
 
         grad = grad_output.mean().item()
-        exciter_layer.weight -= 0.005 * grad
-        exciter_layer.bias -= 0.0025 * grad
+        exciter_layer.weight.data -= 0.005 * grad  # Safe in-place update on correct device
+        exciter_layer.bias.data -= 0.0025 * grad  # Safe in-place update on correct device
 
 class MaskedLinear(nn.Linear):
     def __init__(self, size):
