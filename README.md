@@ -1,6 +1,6 @@
 # Exciter
 
-This repository explores a custom neural network component called the **Exciter Layer**, inspired by recent research suggesting that **astrocytes** may play a role in **short-term memory** in biological systems.
+This repository explores a custom neural network component called the **Exciter Layer** for pyTorch, inspired by recent research suggesting that **astrocytes** may play a role in **short-term memory** in biological systems.
 
 ## Overview
 
