@@ -39,6 +39,8 @@ class ExciterLayer(nn.Module):
         self.network = None
 
     def forward(self, x):
+        # Ensure input and parameters are on the same device
+        x = x.to(self.weight.device)
         output = x * self.weight + self.bias
         return ExciterFunction.apply(output, self)
 
